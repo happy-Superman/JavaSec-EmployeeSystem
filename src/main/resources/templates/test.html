@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>111</h1>
+<div th:text="${msg}"></div>
+<div th:utext="${msg}"></div>
+
+<!--方法一： ${}都是在取变量的值  这是循环遍历users变量 赋值给user  先遍历出来  然后后面text取值 取刚刚遍历出来的变量user的值进行输出-->
+<h3 th:each="user:${users}" th:text="${user}"></h3>
+
+<!--方法二： 行内输出  两个中括号包裹起来就行-->
+<h3 th:each="user:${users}">[[ ${user} ]]</h3>
+</body>
+</html>
